@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Light Eater Escape</title>
+    <script type="module" crossorigin src="./assets/index-DhDLUC41.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DAPvrWqT.css">
+  </head>
+  <body>
+    <!-- Game Canvas Container -->
+    <div id="game-container"></div>
+
+    <!-- UI Overlay -->
+    <div id="ui-layer">
+      <!-- Start Screen -->
+      <div id="start-screen" class="screen active">
+        <h1>Light Eater Escape</h1>
+        <p>You are trapped in the dark.</p>
+        <p>Find the light orbs to illuminate the room.</p>
+        <p>Find the hidden hints to escape.</p>
+        <div class="controls-info">
+          <p><strong>Controls:</strong></p>
+          <p>W, A, S, D - Move</p>
+          <p>Mouse - Look around</p>
+        </div>
+        <button id="start-btn">Click to Start</button>
+      </div>
+
+      <!-- HUD -->
+      <div id="hud-screen" class="screen">
+        <div class="crosshair">+</div>
+        <div class="hud-info">
+          <span>Orbs: <span id="orb-count">0</span> / <span id="total-orbs">5</span></span>
+          <br>
+          <span id="hint-msg"></span>
+        </div>
+      </div>
+
+      <!-- Clear Screen -->
+      <div id="clear-screen" class="screen">
+        <h1>Escaped!</h1>
+        <p>You brought light to the darkness.</p>
+        <p>Thank you for playing.</p>
+        <button id="restart-btn">Restart</button>
+      </div>
+    </div>
+
+  </body>
+</html>
