@@ -29,7 +29,7 @@
 4. 힌트를 따라 맵을 탐색하고 **5개의 오브를 모두 모으면 굳게 닫혀 있던 동쪽의 최종 탈출문(Final Door)이 열립니다.**
 5. 열린 탈출문 구역으로 진입하면 게임 클리어 화면이 나타나며 탈출에 성공합니다.
 
-![탈출문 발견 및 클리어](docs/images/6_final_door.png.png)
+![탈출문 발견 및 클리어](docs/images/6_door_opened.png.png)
 *(그림 4: 5개의 오브를 모아 조건이 달성되어 탈출문이 사라지고 통과 가능한 상태)*
 
 ![게임 클리어 화면](docs/images/7_clear_screen.png.png)
@@ -40,7 +40,7 @@
 ## 💡 강의에서 배운 GI 내용과 구현 내용 매핑
 강의에서 다룬 Global Illumination(GI)의 핵심은 광원에서 나온 빛이 표면에서 한 번 이상 반사되어 주변을 간접적으로 밝히는 원리입니다. 본 프로젝트에서는 연산량이 매우 큰 실시간 Path Tracing을 피하고, 이를 근사적으로 흉내내는 가짜 GI(Fake GI) 방식인 **SurfelGI** 방식을 구현하였습니다. 
 
-![빛 오브 발견 장면](docs/images/3_orb_discover.png.png)
+![빛 오브 발견 장면](docs/images/3_dark_corridor_orb.png.png)
 *(그림 6: 광원(빛 오브)이 존재하는 공간에서의 빛 발산)*
 
 - **이론적 배경**: 표면에 도달한 빛이 반사되는 지점을 작은 디스크 조각(Surfel)으로 간주하고, 이들이 모여 2차 발광원 역할을 하는 개념.
@@ -51,7 +51,7 @@
 ## 🛠 SurfelGI 구현 코드 설명
 실제 코드 구현 방식은 렉(Lag)을 방지하고 웹 환경에서의 최적화를 달성하기 위해, 무거운 실제 조명(PointLight)을 다수 생성하는 것을 생략하고 Material의 속성을 조작하는 방식으로 완성되었습니다.
 
-![빛 오브 획득 및 SurfelGI 효과](docs/images/4_orb_collect.png.png)
+![빛 오브 획득 및 SurfelGI 효과](docs/images/5_final_orb_door.png.png)
 *(그림 7: 빛을 획득한 직후, 바닥과 벽에 배치된 SurfelPoint들이 반사광 역할을 하여 밝아지는 간접광 구현 장면)*
 
 - **`SurfelPoint`**: 빛을 반사하는 지점을 표현하기 위해 `PlaneGeometry`와 투명도가 있는 `MeshBasicMaterial`을 결합한 메시입니다. 표면의 노멀(Normal) 벡터 방향을 바라보게(lookAt) 배치되어 바닥이나 벽에 얇게 밀착됩니다.
