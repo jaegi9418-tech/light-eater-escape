@@ -1,5 +1,10 @@
 # Light Eater Escape
 
+## 제출 링크
+
+- 게임 실행 링크: https://jaegi9418-tech.github.io/light-eater-escape/
+- 리포트 링크: https://github.com/jaegi9418-tech/light-eater-escape/blob/main/REPORT.md
+
 ## 게임 개요
 `Light Eater Escape`는 완전히 어두운 방에서 시작하여 맵에 존재하는 빛 오브(Orb)를 획득하여 주변 공간을 밝히고, 숨겨진 힌트를 찾아 탈출하는 3D 방탈출 게임입니다.
 
